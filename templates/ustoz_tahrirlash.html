@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ustoz tahrirlash</title>
+</head>
+<body>
+<form method="post">
+    {%csrf_token%}
+    <label>Ism:</label><br>
+    <input name="ism" type="text" value="{{ustoz.ism}}">
+    <br>
+    <hr>
+    <br>
+    <label>Jins:</label><br>
+    <select name="jins">
+        <option value="Erkak">Erkak</option>
+        <option value="Ayol">Ayol</option>
+    </select>
+    <br>
+    <hr>
+    <br>
+    <label>yosh:</label><br>
+    <input name="yosh" type="number" min="15" value="{{ustoz.yosh}}">
+    <br>
+    <hr>
+    <br>
+    <label>Daraja:</label><br>
+    <select name="daraja">
+        <option value="{{Bakalavir}}">Bakalavir</option>
+        <option value="{{Magistir}}">Magistir</option>
+        <option value="{{Academik}}">Academik</option>
+        <option value="{{Doctori}}">Doctori</option>
+    </select>
+    <br>
+    <hr>
+    <br>
+    <select name="fan">
+        {% for fan in fanlar%}
+        <option value="{{fan.id}}">{{fan.nom}}</option>
+        {%endfor%}
+    </select>
+    <br>
+    <button type="submit">Tahrirlash</button>
+</form>
+</body>
+</html>

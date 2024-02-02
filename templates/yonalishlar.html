@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yo'nalishlar</title>
+</head>
+<body>
+<br>
+<hr>
+<br>
+<h1>Hamma yo'nalishlar!</h1>
+<br>
+<hr>
+<br>
+{% for yonalish in yonalishlar %}
+<a>{{yonalish.nom}}</a>
+<a href="/yonalish/{{yonalish.id}}/tahrirlash/">
+    <button>Tahrirlash</button>
+</a>
+<hr>
+{%endfor%}
+
+
+</body>
+</html>

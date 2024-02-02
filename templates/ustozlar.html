@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ustozlar</title>
+</head>
+<body>
+<br>
+<hr>
+<br>
+<h1>Hamma ustozlar!</h1>
+<br>
+<hr>
+<br>
+{% for ustoz in ustozlar %}
+<a>{{ustoz.ism}}</a>
+<a href="/ustoz/{{ustoz.id}}/tahrirlash/"><br>
+    <button>Tahrirlash</button>
+</a>
+<hr>
+{%endfor%}
+
+
+</body>
+</html>

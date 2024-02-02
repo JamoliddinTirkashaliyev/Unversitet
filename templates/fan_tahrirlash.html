@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fanni tahrirlash</title>
+</head>
+<body>
+<form method="post">
+    {%csrf_token%}
+    <label>Nom:</label><br>
+    <input name="nom" type="text" value="{{fan.nom}}">
+    <br>
+    <hr>
+    <select name="yonalish">
+        {% for yonalish in yonalishlar %}
+        <option value="{{yonalish.id}}">{{ yonalish.nom}}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <label>Asosi:</label><br>
+    <input name="asosi" type="checkbox">
+    <br>
+    <hr>
+
+    <button type="submit">Tahrirlash</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FANLAR</title>
+</head>
+<body>
+<br>
+<hr>
+<br>
+<h1>Hamma fanlar!</h1>
+<br>
+<hr>
+<br>
+{% for fan in fanlar %}
+<a>{{fan.nom}}</a>
+<a href="/fan/{{fan.id}}/tahrirlash/">
+    <button>Tahrirlash</button>
+</a>
+<hr>
+{%endfor%}
+
+
+</body>
+</html>
