@@ -1,9 +1,17 @@
 from django.shortcuts import render,redirect
 from .models import *
+from .forms import *
 
 def fanlar(request):
+    if request.method == 'POST':
+        data = FanForm(request.POST)
+        if data.is_valid():
+            data.save()
+        return redirect('/fan/')
+
     date={
-        "fanlar":Fan.objects.all()
+        "fanlar":Fan.objects.all(),
+        'form':FanForm(),
     }
     return render(request,"fanlar.html",date)
 
@@ -24,8 +32,14 @@ def fan_tahrirlash(request, pk):
 
 
 def yonalishlar(request):
+    if request.method == 'POST':
+        data = YonalishForm(request.POST)
+        if data.is_valid():
+            data.save()
+        return redirect('/yonalish/')
     date={
-        "yonalishlar":Yonalish.objects.all()
+        "yonalishlar":Yonalish.objects.all(),
+        'form':YonalishForm()
     }
     return render(request,"yonalishlar.html",date)
 
@@ -45,8 +59,14 @@ def yonalish_tahrirlash(request, pk):
 
 
 def ustozlar(request):
+    if request.method == 'POST':
+        data = UstozForm(request.POST)
+        if data.is_valid():
+            data.save()
+        return redirect('/ustoz/')
     date={
-        "ustozlar":Ustoz.objects.all()
+        "ustozlar":Ustoz.objects.all(),
+        'form':UstozForm()
     }
     return render(request,"ustozlar.html",date)
 
